@@ -29,13 +29,13 @@ if not st.session_state.logged_in:
         kategori = st.selectbox("Pilih Jenis Pengguna", ["Keluarga", "Pribadi", "Siswa/Mahasiswa", "Pedagang", "UMKM", "Pengusaha", "Pebisnis"])
         submit = st.form_submit_button("Masuk")
 
-        if submit and nama and email:
-            st.session_state.logged_in = True
-            st.session_state.nama = nama
-            st.session_state.email = email
-            st.session_state.kategori_pengguna = kategori
-            st.success(f"Selamat datang, {nama}! Anda terdaftar sebagai {kategori}.")
-            st.experimental_rerun()
+       if submit and nama and email:
+    st.session_state.logged_in = True
+    st.session_state.nama = nama
+    st.session_state.email = email
+    st.session_state.kategori_pengguna = kategori
+    st.success(f"Selamat datang, {nama}! Anda terdaftar sebagai {kategori}.")
+
 else:
     st.sidebar.success(f"Masuk sebagai: {st.session_state.nama} ({st.session_state.kategori_pengguna})")
     menu = st.sidebar.radio("Navigasi", ["Input Data", "Lihat Catatan", "Grafik & Insight", "AI Assistant", "Export Data"])
